@@ -1,0 +1,20 @@
+outdir : "Pcit_easel_rhmpph5cp"
+genome : "/flash/HusnikU/Javier/Pcit_SQC/nextpolish2/MrgHIFI_polished/RAFT_HIFi_Mrg_purged_polished_HIC5C.np2.fa.masked"
+bam : "/flash/HusnikU/Javier/pcit_RNA/assemblies/rhmpph5cp_hisat2Aligment/sorted_dta.bam"
+busco_lineage : "hemiptera"
+order : "Hemiptera"
+prefix : "P_citri"
+reference_db : "/bucket/HusnikU/Databases/nr_2024_diamond.dmnd"
+taxon : "planococcus"
+training_set : 'invertebrate'
+hisat2_max_intronlen : 20000
+# resume_filtering : true
+# rna_list : "/flash/HusnikU/Javier/pcit_RNA/FunctionalGeneAnnotation/Easel/Pcit_easel_dta_bam_vL/06_predictions/rna.txt"
+# augustus_list : "/flash/HusnikU/Javier/pcit_RNA/FunctionalGeneAnnotation/Easel/Pcit_easel_dta_bam_vL/06_predictions/augustus.txt"
+
+##
+# Bam file gnerated with: hisat2 --dta -q -x ${index}/hisat2 -1 ${read_1} -2 ${read_2} -S ${id}.sam | samtools view -b ${id}.sam | samtools sort -o sorted.bam
+# We can try to increase memory! To do so you must manually edit the PSICLASS label here: 
+# ~/.nextflow/assets/PlantGenomicsLab/easel/modules/gene_prediction/gene_model.nf
+#  By default it is set to process_medium which gives 36G and 8 cores, but if you set it to 
+#  process_high it will provide 100G and 16 cores
